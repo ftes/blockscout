@@ -65,7 +65,7 @@ defmodule BlockScout.Mixfile do
   defp dialyzer() do
     [
       plt_add_deps: :app_tree,
-      plt_add_apps: ~w(credo ex_unit mix wallaby)a,
+      plt_add_apps: ~w(credo ex_unit mix)a,
       ignore_warnings: ".dialyzer_ignore.exs",
       plt_core_path: "priv/plts",
       plt_file: {:no_warn, "priv/plts/dialyzer.plt"}
@@ -107,7 +107,7 @@ defmodule BlockScout.Mixfile do
       {:ex_abi, "~> 0.8.5"},
       {:prometheus_ex, "~> 5.1.0", override: true},
       {:absinthe_plug, git: "https://github.com/blockscout/absinthe_plug.git", tag: "1.5.8", override: true},
-      {:tesla, "~> 1.22.0"},
+      {:tesla, "~> 1.23.0"},
       {:mint, "~> 1.11.0"},
       # `mock` pins `meck ~> 0.9.2`, which fails to compile on OTP 29 (bare `catch`
       # deprecation + `warnings_as_errors`). meck 1.x keeps the same API.
